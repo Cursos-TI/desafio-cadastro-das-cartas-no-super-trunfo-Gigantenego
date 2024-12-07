@@ -10,21 +10,27 @@ int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
 
-    char nome_da_cidade[50],nome_da_cidade2[50];
+    char nome_da_cidade[50],nome_da_cidade2[50],estado[50],estado2[50];
     char codigo_da_cidade[50],codigo_da_cidade2[50];
-
-    double populacao,populacao2, area,area2,densidade_populacional,densidade_populacional2;
-    double melhor_densidade,PIB_per_capita,PIB,PIB2,PIB_per_capita2;
-    unsigned long int pontuacao_cidade1,pontuacao_cidade2;
-    unsigned int numero_de_pontos_turisticos,numero_de_pontos_turisticos2;    
+    unsigned long int populacao,populacao2;
+    float area,area2,densidade_populacional,densidade_populacional2;
+    float PIB_per_capita,PIB,PIB2,PIB_per_capita2;
+    float pontuacao_cidade1,pontuacao_cidade2;
+    int numero_de_pontos_turisticos,numero_de_pontos_turisticos2;    
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
 
     printf("***BEM VINDO AO JOGOS SUPERTRUNFO***");
+
     printf("\n\n***INSERINDO DADOS DA PRIMEIRA CIDADE***\n\n");
-   
+
+    printf("Insira nome do estado: \n");
+    //usei fgets porque existem cidades com nomes compostos
+    fgets(estado, sizeof(estado), stdin);
+    getchar();
+
     printf("Insira nome da cidade: \n");
     //usei fgets porque existem cidades com nomes compostos
         fgets(nome_da_cidade, sizeof(nome_da_cidade), stdin);
@@ -48,6 +54,12 @@ int main() {
     getchar();
 
     printf("\n\n***INSERINDO DADOS DA SEGUNDA CIDADE***\n\n");
+
+     printf("Insira nome do estado: \n");
+    //usei fgets porque existem cidades com nomes compostos
+    fgets(estado2, sizeof(estado2), stdin);
+    getchar();
+
 
     printf("Insira nome da 2° cidade: \n");
         fgets(nome_da_cidade2, sizeof(nome_da_cidade2), stdin);
@@ -82,10 +94,11 @@ int main() {
 
     printf("\n\n***RESUMO DA PRIMEIRA CIDADE***\n\n");
 
+    printf("Estado: %s",estado);
     printf("Nome da 1° cidade: %s",nome_da_cidade);
     printf("\n\nCódigo de %s: %s\n",nome_da_cidade, codigo_da_cidade);
     printf("População de %s: %f\n",nome_da_cidade,populacao);
-    printf("Área de %s: %f\n",nome_da_cidade,area);
+    printf("Área de %s: %f Km²\n",nome_da_cidade,area);
     printf("PIB de %s: %f\n",nome_da_cidade, PIB);
     printf("Número de pontos turísticos de %s: %u\n",nome_da_cidade,numero_de_pontos_turisticos);
     printf("Densidade populacional de %s: %f\n",nome_da_cidade,densidade_populacional);
@@ -94,10 +107,11 @@ int main() {
 
     printf("\n\n***RESUMO DA SEGUNDA CIDADE***\n\n"); 
 
+    printf("Estado: %s",estado2);
     printf("Nome da 2° cidade: %s",nome_da_cidade2);
     printf("\n\nCódigo de %s: %s\n",nome_da_cidade2, codigo_da_cidade2);
     printf("População de %s: %f\n",nome_da_cidade2,populacao2);
-    printf("Área de %s: %f\n",nome_da_cidade2,area2);
+    printf("Área de %s: %f Km²\n",nome_da_cidade2,area2);
     printf("PIB de %s: %f\n",nome_da_cidade2, PIB2);
     printf("Número de pontos turísticos de %s: %u\n",nome_da_cidade2,numero_de_pontos_turisticos2);
     printf("Densidade populacional de %s: %f\n",nome_da_cidade2,densidade_populacional2);
